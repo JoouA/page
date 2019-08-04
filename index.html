@@ -46,19 +46,14 @@
 		div.flower {
 			animation: myRotate 10s infinite linear
 		}
-		div.flower img,
-		div.centre img {
-			width: 90%;
-			position: absolute;
-			left: 0px;
-			right: 0px;
-			top: 0px;
-			bottom: 0px;
-			margin: auto;
+		div.flower img {
+			width: 100%;
 		}
 		div.centre img {
-			width: 78%;
-			left: -2%;
+			width: 97%;
+			position: absolute;
+			left: 7px;
+			top: 1px;
 		}
 		div.pointer {
 			transform: rotate(4deg);
@@ -135,35 +130,26 @@
 			bottom: 20px;
 		}
 		img.bg2 {
-			width: 68%;
-    		height: 49px;
-		}
-		div.cache {
-			display: none;
+			width: 81%;
+    		height: 60px;
 		}
 	</style>
 </head>
 <body>
 	<div class="content">
-		<!-- 无闪烁效果，替换src为含有文字的背景图地址 -->
-		<img class="bg" src="https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55HaiaCFT9NxBFNqCwaFNgLqfq1zI0vtVicWaiaV4wcoZnnz7uzFnove2Og/0?wx_fmt=jpeg"/>
-		<!-- 有闪烁效果，将下面代码取消注释，将上面代码注释 -->
-		<!-- <img class="bg" src="https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55HaiaCFT9NxBFNqCwaFNgLqfq1zI0vtVicWaiaV4wcoZnnz7uzFnove2Og/0?wx_fmt=jpeg"/> 
-		<div class="flicker"></div>
-		<img class="bg2" src="https://mmbiz.qpic.cn/mmbiz_png/rYqAeTydPKAayXybLNLGAdSj3YteZg55q7m6tticQ3Wwg4sJhiaJTgFJtgVXz71qFhXXLjgVaWZiaQg226iaa8Ua8A/0?wx_fmt=png"/> -->
+		<img class="bg" src="./img/bg.jpg"/>
 		<div class="flower">
-			<img src="https://mmbiz.qpic.cn/mmbiz_png/rYqAeTydPKAayXybLNLGAdSj3YteZg558n6s6kWhbhFXNGNlWiav2jtlWqrN0PtyjuGMD2cjaJicOTN5NXW2dbIQ/0?wx_fmt=png"/>
+			<img src="./img/flower.png"/>
 		</div>
 		<div class="centre">
 			<div class="center"></div>
-			<img src="https://mmbiz.qpic.cn/mmbiz_png/rYqAeTydPKAayXybLNLGAdSj3YteZg55yapLCkz94iasnh3PENPV0Z7jV7WXZUGbMlfesicUH0Xemn900bEkwGqQ/0?wx_fmt=png"/>
+			<img src="./img/centre.png"/>
 		</div>
 		<div class="pointer">
-			<img src="https://mmbiz.qpic.cn/mmbiz_png/rYqAeTydPKAayXybLNLGAdSj3YteZg556AdhmUIcUZ3JPooGY9Mh42Z1ibwwib1etNUCfaJW4KMzh32wUaEkhW5w/0?wx_fmt=png"/>
+			<img src="./img/pointer.png"/>
 		</div>
 		<div class="control"></div>
 		<img class="details"/>
-		<div class="cache"></div>
 	</div>
 </body>
 <script type="text/javascript">
@@ -181,20 +167,20 @@
 		$('control').appendChild(div);
 		st.transform = `rotate(${30*i}deg) skew(30deg,30deg)`;
 		switch(i){
-			case 0 : {st.top = '-75px';st.left = '-75px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55mib4iacCsw5mVXIAtCghFddqS2JDt3YJKs8AricZgo2dibsl1NyMdYuo2Q/0?wx_fmt=jpeg";} break;
-			case 1 : {st.top = '-130px';st.left = '30px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55eib06InhiaibxRGYE98olDH8ibf5E7uXVePic6icNLNXWsYb8A25BlniagXSg/0?wx_fmt=jpeg";} break;
-			case 2 : {st.top = '-127px';st.left = '152px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg551wf49OzLaxlLpRpJcTumHowkRLC6KD8zz0IkIOFun6sLk929LeYK1Q/0?wx_fmt=jpeg";} break;
-			case 3 : {st.top = '-70px';st.left = '256px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55ms2dBjfbqve75nuo8mzbMtJeib4EoCO0xfUAA0FOpCKryBJ8wav7IyA/0?wx_fmt=jpeg";} break;
-			case 4 : {st.top = '33px';st.left = '320px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg558ibSDj2STpYemlX9Nv6TXC7ZkichroeODojSEwnRQJL7W4mFEsev8Mpw/0?wx_fmt=jpeg";} break;
-			case 5 : {st.top = '157px';st.left = '317px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55zribhlYRm5pU1t5X2Slhlxz8u6via3q1mZyrlg4BvpzjxleNvX6jgo1A/0?wx_fmt=jpeg";} break;
-			case 6 : {st.top = '261px';st.left = '255px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55jKwesE4zd9FE8DUT9Exg92tOqUNqeDe7OamGHQlqceEC515Blf8p6g/0?wx_fmt=jpeg";} break;
-			case 7 : {st.top = '316px';st.left = '150px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55pF770XPJ2Pzia1TMWMomvNJwicVS8OHHIwmiaThIdDtjL78qHDNmLg7mw/0?wx_fmt=jpeg";} break;
-			case 8 : {st.top = '317px';st.left = '29px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55aT7lTGw4FLW5Lu64liawibCNmge4USKwiaMuial6nhz8xnib8pwr7Xzibtmw/0?wx_fmt=jpeg";} break;
-			case 9 : {st.top = '259px';st.left = '-78px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55bkzEWic7fyjUv3a8vNhtajib374vxhI5s7iaCrxc12JZ90PegFpFZickXg/0?wx_fmt=jpeg";} break;
-			case 10 : {st.top = '156px';st.left = '-148px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg551icII0ojwDAgWGibOltRKjCVEiaMNOMYciaULcdsm9xmH8ddpqtzfYlLuw/0?wx_fmt=jpeg";} break;
-			case 11 : {st.top = '34px';st.left = '-138px';site = "https://mmbiz.qpic.cn/mmbiz_jpg/rYqAeTydPKAayXybLNLGAdSj3YteZg55EKiby7suic148FJGIc1gOEucrVTg1hS4AfkHGdOmIdV7xYdu43Cmg1fw/0?wx_fmt=jpeg";} break;
+			case 0 : {st.top = '-75px';st.left = '-75px';site = 8;} break;
+			case 1 : {st.top = '-130px';st.left = '30px';site = 9;} break;
+			case 2 : {st.top = '-127px';st.left = '152px';site = 10;} break;
+			case 3 : {st.top = '-70px';st.left = '256px';site = 11;} break;
+			case 4 : {st.top = '33px';st.left = '320px';site = 12;} break;
+			case 5 : {st.top = '157px';st.left = '317px';site = 1;} break;
+			case 6 : {st.top = '261px';st.left = '255px';site = 2;} break;
+			case 7 : {st.top = '316px';st.left = '150px';site = 3;} break;
+			case 8 : {st.top = '317px';st.left = '29px';site = 4;} break;
+			case 9 : {st.top = '259px';st.left = '-78px';site = 5;} break;
+			case 10 : {st.top = '156px';st.left = '-148px';site = 6;} break;
+			case 11 : {st.top = '34px';st.left = '-138px';site = 7;} break;
 		}
-		imgSrc.push(site);
+		imgSrc.push(`./img/十二时辰${site}.jpg`);
 		(function(i){
 			div.onclick = function(){
 				console.log(imgSrc[i]);
@@ -213,10 +199,5 @@
 			}
 		}(i))
 	}
-	imgSrc.forEach(item => {
-		var img = document.createElement('img');
-		img.src = item;
-		$('cache').appendChild(img);
-	})
 </script>
 </html>
